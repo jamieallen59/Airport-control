@@ -17,9 +17,10 @@ class Airport
 		hanger << plane
 	end
 
-	def take_off
+	def take_off(plane)
 		raise "The weather is too stormy for take off just now son" if weather_stormy?
-		hanger.pop
+		plane.fly!
+		hanger.delete(plane)
 	end
 
 	def full?
